@@ -29,6 +29,8 @@ gsutil cp gs://your-bucket-name/your-folder-name/test.sh .
 
 3. Run the script to start the Nextflow pipeline:
 
+Running Nextflow generates the work directory contents, which are stored in the `work` directory, nextflow logs, .nextflow cache contents, and the pipeline output. These are stored in the `gs://your-bucket-name/your-folder-name/nf-logs/directory-with-timestamp` directory.
+
 a. Without caching:
 ```bash
 sbatch test.sh --location "gs://your-bucket-name/your-folder-name"
