@@ -1,10 +1,5 @@
 #!/bin/bash
 
-#SBATCH -p c2s4
-#SBATCH --job-name=issue-test
-#SBATCH --out=issue-test%A.log
-#SBATCH --error=issue-test%A.err
-
 set -e # Fail script if anything fails
 
 
@@ -70,7 +65,7 @@ cd "$new_folder"
 tar -xf test.tar.gz
 set +e
 
-nextflow run main.nf -resume -with-trace trace.txt -with-timeline timeline.html -with-report report.html -dump-hashes 
+nextflow -bg run main.nf -resume -with-trace trace.txt -with-timeline timeline.html -with-report report.html -dump-hashes 
 
 debug_output_folder="$(TZ=America/Denver date +"%m-%d-%Y-%T") HIPV_pipeline_debug_output"
 gsutil -m cp -r . "$location/nf_logs/$debug_output_folder/"

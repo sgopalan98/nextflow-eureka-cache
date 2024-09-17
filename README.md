@@ -33,12 +33,12 @@ Running Nextflow generates the work directory contents, which are stored in the 
 
 a. Without caching:
 ```bash
-sbatch test.sh --location "gs://your-bucket-name/your-folder-name"
+./test.sh --location "gs://your-bucket-name/your-folder-name"
 ```
 
 b. With caching:
 ```bash
-sbatch test.sh --location "gs://your-bucket-name/your-folder-name" --resume-location "gs://your-bucket-name/your-folder-name/nf-logs/log-directory"
+./test.sh --location "gs://your-bucket-name/your-folder-name" --resume-location "gs://your-bucket-name/your-folder-name/nf-logs/log-directory"
 ```
 
 
